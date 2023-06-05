@@ -1,0 +1,37 @@
+# チェック対象のコードがどの実行環境で使われるか
+# https://eslint.org/docs/latest/use/configure/language-options#specifying-environments
+env:
+  # ブラウザで使用する場合 true（alert、window などのグローバル変数を認識する）
+  browser: true
+  # node の環境変数
+  node: true
+  # jest
+  jest: true
+  # ES2022 までに導入されたグローバル変数を認識する
+  es2022: true
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  # ES Modules を使ってコードを書く場合は module を指定する必要がある
+  sourceType: module
+
+plugins:
+  - eslint-plugin-jest
+  - jest
+
+# パッケージが提供してくれているおすすめ設定を使う設定
+extends:
+  # eslint が提供してくれている設定
+  - 'eslint:recommended'
+  # prettier
+  - 'prettier'
+
+# ルール設定
+rules: {}
+
+# https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-globals
+globals: {
+    # VoidFunction が no-undef になるので追加
+    VoidFunction: true,
+  }
