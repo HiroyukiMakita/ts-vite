@@ -28,7 +28,12 @@ extends:
   - 'prettier'
 
 # ルール設定
-rules: {}
+rules: {
+    # 型定義で no-unuse-vars のエラーが出ないように、
+    # ESLint デフォルトの no-unused-vars を無効化、TypeScript 用の no-unused-vars を追加
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
+  }
 
 # https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-globals
 globals: {
