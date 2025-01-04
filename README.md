@@ -17,23 +17,25 @@
 1. install dependencies
 
 ```terminal
- yarn install
+yarn install
 ```
 
 2. run vite sever
 
 ```terminal
- yarn dev
+yarn dev
 ```
+
+And Access [http://localhost:3000/](http://localhost:3000/)
 
 ## Run Test
 
 ```terminal
-  yarn test
+yarn test
 ```
 
 ## Run Linter and Formatter
 
 ```terminal
-  yarn lint:fix
+yarn lint:fix
 ```
